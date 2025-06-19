@@ -36,6 +36,10 @@ export default {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
+        success: { // Added from PRD
+          DEFAULT: 'hsl(var(--success))',
+          foreground: 'hsl(var(--success-foreground))'
+        },
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
@@ -52,6 +56,8 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+        // Added for PRD typography requirements (text-secondaryText)
+        secondaryText: 'hsl(var(--muted-foreground))', // PRD secondaryText is mapped to --muted-foreground
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -64,10 +70,20 @@ export default {
 				}
 			},
 			borderRadius: {
+        // Existing configuration aligns with PRD through --radius CSS variable (0.5rem)
+        // PRD default "rounded" (0.25rem) maps to 'sm'
+        // PRD buttons "rounded-md" (0.375rem) maps to 'md'
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'], // From PRD typography.primaryFont
+      },
+      boxShadow: { // From PRD effects.shadows
+        DEFAULT: '0 1px 2px 0 rgb(0 0 0 / 0.05)', // Corresponds to PRD default: "shadow-sm"
+        header: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)', // Corresponds to PRD header: "shadow"
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
