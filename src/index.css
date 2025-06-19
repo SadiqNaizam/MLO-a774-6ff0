@@ -4,54 +4,53 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 16.7% 97.3%; /* PRD: #F8F9FA */
+    --foreground: 215 27.8% 13.7%; /* PRD: primaryText #1A202C */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* PRD: surface #FFFFFF */
+    --card-foreground: 215 27.8% 13.7%; /* PRD: primaryText #1A202C */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%; /* PRD: surface #FFFFFF */
+    --popover-foreground: 215 27.8% 13.7%; /* PRD: primaryText #1A202C */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 207.3 66.3% 50%; /* PRD: accent #3182CE */
+    --primary-foreground: 0 0% 100%; /* White for contrast */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 35.5 90.6% 65.3%; /* PRD: accentSecondary #F6AD55 */
+    --secondary-foreground: 215 27.8% 13.7%; /* PRD: primaryText #1A202C for contrast */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 213.3 17.4% 90.8%; /* PRD: sidebar color #E4E7EB (Used for muted backgrounds) */
+    --muted-foreground: 215.3 15.4% 51.6%; /* PRD: secondaryText #718096 */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 207.3 66.3% 50%; /* PRD: accent #3182CE (Same as primary) */
+    --accent-foreground: 0 0% 100%; /* White for contrast */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 76.8% 57.1%; /* PRD: error #E53E3E */
+    --destructive-foreground: 0 0% 100%; /* White for contrast */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --success: 147.9 44.2% 51.2%; /* PRD: success #48BB78 */
+    --success-foreground: 0 0% 100%; /* White for contrast */
 
-    --radius: 0.5rem;
+    --border: 210 25% 82.9%; /* PRD: border #CBD5E0 */
+    --input: 210 25% 82.9%; /* PRD: border #CBD5E0 (Often same as border) */
+    --ring: 207.3 66.3% 50%; /* PRD: accent #3182CE (For focus rings) */
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.5rem; /* Existing value, aligns with PRD for component sizes */
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar specific variables, updated based on PRD */
+    --sidebar-background: 213.3 17.4% 90.8%; /* PRD: sidebar #E4E7EB */
+    --sidebar-foreground: 215 27.8% 13.7%; /* PRD: primaryText #1A202C */
+    --sidebar-primary: 207.3 66.3% 50%; /* PRD: accent #3182CE (e.g., active item text/icon color) */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text if --sidebar-primary is a background */
+    --sidebar-accent: 210 100% 95%; /* Light blue derived from PRD accent (e.g., #EBF4FF HSL: 210 100% 95.3%) for active/hover background */
+    --sidebar-accent-foreground: 207.3 66.3% 50%; /* PRD: accent #3182CE (text on --sidebar-accent background) */
+    --sidebar-border: 210 25% 82.9%; /* PRD: border #CBD5E0 */
+    --sidebar-ring: 207.3 66.3% 50%; /* PRD: accent #3182CE for focus */
   }
 
   .dark {
+    /* Dark mode variables are not specified in the PRD for this update. */
+    /* Preserving existing dark mode configuration. */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -76,9 +75,15 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
+    /* Assuming success also needs dark mode versions if used */
+    /* --success: ...; */
+    /* --success-foreground: ...; */
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    /* Sidebar dark mode variables */
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -97,5 +102,7 @@
 
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
